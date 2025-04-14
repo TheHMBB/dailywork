@@ -9,7 +9,7 @@ lock = threading.Lock()
 
 
 # used_sub_lst: list[str] = []
-
+print("hello,world")
 
 def file_exists(file_path: str):
     """判断文件或者目录是否存在
