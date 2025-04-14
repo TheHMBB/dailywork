@@ -57,7 +57,7 @@ def makeR(url: str):
 
 
 
-all_urls_lst: list[str] = readFile("./domains.csv").split("\n",maxsplit=-1)[0:100]
+all_urls_lst: list[str] = readFile("./domains.csv").split("\n",maxsplit=-1)
 
 
 
