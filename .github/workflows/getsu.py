@@ -11,6 +11,7 @@ lock = threading.Lock()
 # used_sub_lst: list[str] = []
 print("hello,world")
 with open("./success.txt",'w') as f:
+    print("hhhh")
     f.write("aaa")
 
 def file_exists(file_path: str):
