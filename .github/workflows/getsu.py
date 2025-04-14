@@ -4,6 +4,7 @@ import concurrent.futures
 import threading
 import requests
 from pathlib import Path
+import sys
 lock = threading.Lock()
 
 
@@ -12,8 +13,11 @@ lock = threading.Lock()
 print("hello,world")
 with open("./success.txt",'w') as f:
     print("hhhh")
-    f.write("aaa")
-
+    try:
+        f.write("aaa")
+    except Exception as e:
+        print("写入失败")
+sys.exit()
 def file_exists(file_path: str):
     """判断文件或者目录是否存在
 
