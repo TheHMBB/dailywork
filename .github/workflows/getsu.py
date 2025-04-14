@@ -37,7 +37,7 @@ def readFile(file_path: str):
         text = f.read().strip()
     return text
 
-success_sub_set: set[str] = set(readFile(".github/workflows/success.txt").split("\n",maxsplit=-1))
+success_sub_set: set[str] = set(readFile("./success.txt").split("\n",maxsplit=-1))
 
 def makeR(url: str):
     url_full: str = f"https://{url}/sub/89b3cbba-e6ac-485a-9481-976a0415eab9"
@@ -50,14 +50,14 @@ def makeR(url: str):
             print(f"{url_full}泄漏,请求成功")
             with lock:
                 # used_sub_lst.append(url_full)
-                with open(".github/workflows/success.txt",'a',encoding="utf-8") as f:
+                with open("./success.txt",'a',encoding="utf-8") as f:
                     f.write(f"{url_full}\n")
     except Exception as e:
         print(f"{url_full}没有泄漏,请求失败")
 
 
 
-all_urls_lst: list[str] = readFile(".github/workflows/domains.csv").split("\n",maxsplit=-1)[0:100]
+all_urls_lst: list[str] = readFile("./domains.csv").split("\n",maxsplit=-1)[0:100]
 
 
 
@@ -74,8 +74,8 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=threads_nums) as executor
             future_list.append(future)
     concurrent.futures.wait(future_list)
     
-url_lst: list[str] = list(set(readFile(".github/workflows/success.txt").split("\n",maxsplit=-1)))
-with open(".github/workflows/success.txt",'w',encoding="utf-8") as f2:
+url_lst: list[str] = list(set(readFile("./success.txt").split("\n",maxsplit=-1)))
+with open("./success.txt",'w',encoding="utf-8") as f2:
     for sub in url_lst:
         # code
         if sub not in {'',' ',"\n"}:
