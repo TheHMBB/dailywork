@@ -12,7 +12,7 @@ lock = threading.Lock()
 # used_sub_lst: list[str] = []
 print("hello,world")
 try:
-    with open("./success.txt",'w') as f:
+    with open(".github/workflows/success.txt",'w') as f:
         print("hhhh")
         
         f.write("aaa")
