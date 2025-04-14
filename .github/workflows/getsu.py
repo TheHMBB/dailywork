@@ -11,11 +11,12 @@ lock = threading.Lock()
 
 # used_sub_lst: list[str] = []
 print("hello,world")
-with open("./success.txt",'w') as f:
-    print("hhhh")
-    try:
+try:
+    with open("./success.txt",'w') as f:
+        print("hhhh")
+        
         f.write("aaa")
-    except Exception as e:
+except Exception as e:
         print("写入失败")
 sys.exit()
 def file_exists(file_path: str):
