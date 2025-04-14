@@ -27,8 +27,7 @@ def makeR(url: str):
     except Exception as e:
         print(f"{url_full}没有泄漏,请求失败")
 
-# all_urls_lst: list[str] = pt.getAllKeysFromDict(pt.jsonFileToDict(json_file_path="./有效的BPB域名排序.json"))
-all_urls_lst: list[str] = pt.readFile("./下载的所有BPB域名.csv").split("\n",maxsplit=-1)
+all_urls_lst: list[str] = pt.readFile("./domains.csv").split("\n",maxsplit=-1)
 
 
 
