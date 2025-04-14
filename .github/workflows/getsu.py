@@ -61,7 +61,7 @@ all_urls_lst: list[str] = readFile("./domains.csv").split("\n",maxsplit=-1)
 
 
 
-threads_nums: int = 4
+threads_nums: int = 16
 
 # new_url_lst: list[list[str]] = pt.listSegment(lst=all_urls_lst,offset_nums=threads_nums)
 
