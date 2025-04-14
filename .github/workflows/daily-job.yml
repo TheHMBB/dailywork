@@ -25,4 +25,4 @@ jobs:
     
     - name: Run Python script
       run: |
-        python getsu.py  # 你脚本的路径
+        python .github/workflows/getsu.py  # 你脚本的路径
